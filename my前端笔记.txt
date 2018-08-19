@@ -1,0 +1,4 @@
+一，canvas
+	1.常用语法
+		dom.getContext('2d')创建canvas执行上下文为2d对象
+		
