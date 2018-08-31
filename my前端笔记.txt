@@ -1,4 +1,110 @@
-一，canvas
+一,	模块化开发
+	1，运用立即执行函数（）（）
+		传入全局对象如：window，jQuery将立即执行函数中将数据向外暴露！window.foo=foo;
+	2,模块化引入
+		1，commonJS规范运用
+		通过 module.exports 语句来导出对象为模块
+		module.exports = value；
+		再通过 require 语句来引入
+		var s=require(’文件地址‘)
+		value为任意数据
+			原理运用browserify解析与相关依赖的文件即打包，让require可以使用但是不能将ES6转义为ES5
+			还要用 babel将ES6转为ES5
+			命令：
+				babel包安装：（babel是将ES6转为ES5的包）
+				1.创建.babelrc文件{
+					“presets”：[ //设定转码规则
+					"es2015"
+					(还有react , stage-2)
+					],
+					"plugins":[]
+					}
+				
+				2.npm install --save-dev babel-cli 局部安装babel转码器
+				3.npm install --save-dev babel-preset-es2015 安装转es2015的规则包
+				4.转码命令
+					babel 要转码的文件名 -o 输出的文件名  //单个文件转码
+					babel 要转码的文件夹名 -d 输出的文件夹名  //整个文件夹转码
+				
+			由于浏览器不支持comonJs所以安装browserify
+				npm instrall browserify -g
+				全局安装browserify；
+				npm instrall browserify --save-dev
+				再本地安装browserify开发板！
+				运行browserify 输入文件地址 -o 输出文件地址
+		2，es6的规范使用
+			向外暴露export value；
+			引用 import {value} from '文件地址'
+			{value}是ES6的对象解构
+		模块化开发的流程ES6 - ES5  - 浏览器识别（打包）	
+		
+二，ES6语法
+	1.let
+	2.const
+	3.箭头函数 
+		（）=>console.log("a")
+	4.模块化
+	5.数据解构
+三，webpack使用
+	1.webpackde 的单个文件的打包：webpack 打包文件 输出文件
+	2.webpack.config.js配置
+		module.exports={
+			entry:''//(绳子头)所有关联文件的集合
+		}，
+		output:{
+		path:__dirname+'/dist',//打包文件的路径
+		filename;''//文件名
+		}，
+		module:{ //需要的工具包
+			loaders:[
+				{
+					text:'//'
+				}
+			]
+		}
+		3.例如安装jQuery库打包库
+		nom install jquery --save-dev
+		4.在需要使用的地方直接var $=require（''jquery）;
+		然后就可以用“$”了
+		5.最后用：webpack命令进行编译后用：webpack命令进行编译
+		6.将文件打包到服务端
+			1.安装webpack-dev-server模块 npm insrall webpack-dev-server --save-dev
+			2.package.json配置
+				“script”:{ 
+					"start"：“webpack-dev-server --entry 输入文件 --output-filename 输出文件”
+					"build":"webpack --watch"//添加监听
+				}
+			3.启动webpack:npm run build;//和package.json中的build同名
+			4.启动项目：npm start
+四，vue的使用
+五，canvas
 	1.常用语法
 		dom.getContext('2d')创建canvas执行上下文为2d对象
-		
+六，文件上传（图片）
+  1.ajax方式将数据放在FormData(form)对象中，js写的ajax：
+  	    let xhr = new XMLHttpRequest()
+            let formdata = new FormData($('#form')[0])
+            xhr.open('post', 'http://127.0.0.1/weChet/upimg.php?id=1')
+            xhr.onload = function () {
+                if(xhr.responseText == 1){  //后台返回值判断
+                    alert('上传ok')
+                }
+            }
+            xhr.upload.onprogress = function (event) {  //文件上传进度检测
+                //  console.log(event);
+                let percent = event.loaded / event.total * 100 + '%';
+                console.log(percent);
+                // 设置 进度条内部step的 宽度
+            }
+            xhr.send(formdata) //发送
+      2.文件上传预览
+       	 运用FileReader()对象
+	    let reader = new FileReader(); //实例化FileReader对象
+            reader.readAsDataURL(files[0]) //设置文件源
+            reader.onload = function () {  //实例化的对象加载完成后的回调函数
+                let img = document.createElement('img')
+                img.width = 50
+                img.height = 50
+                img.src = this.result      //实例化实例化对象的图片的地址（图片是base64位的图片格式）
+                document.querySelector('.upimg').appendChild(img)
+      
