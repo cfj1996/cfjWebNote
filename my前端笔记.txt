@@ -104,6 +104,25 @@
 			组件的字符串
 			})
 	4.解决闪烁增加指令v-cloak；增加css[]
+	5.双向数据绑定的原理运用Object.defineProperty(Obj,key,{})监听Obj下的属性
+		封装函数如下：
+		function defineReactive (obj,key,val) {
+        Object.defineProperty(obj,key,{
+            enumerable: true,
+            configurable: true,
+            get: function () {
+                return val;
+                console.log('get')
+            },
+            set: function (newVal) {
+                if(newVal === val || (newVal !== newVal && value !== value)){
+                    return ;
+                }
+                val = newVal;
+                console.log('set')
+            }
+        });
+    }
 五，css高级开发
 	1.css变量绑定
 	  css：
