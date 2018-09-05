@@ -77,10 +77,107 @@
 			3.启动webpack:npm run build;//和package.json中的build同名
 			4.启动项目：npm start
 四，vue的使用
-五，canvas
+	vue最常用的属性{
+			data:Vue 实例的数据对象
+			components：Vue实例配置局部注册组件
+			computed:计算属性
+			watch：侦听属性
+			filters：过滤器
+			methods:Vue实例方法
+			created：在实例创建完成后被立即调用，完成初始化操作
+			mounted：el挂载到Vue实例上了，开始业务逻辑操作
+			beforeDestroy：实例销毁之前调用
+			props:用于接收来自父组件的数据
+			template：组件模板
+			render：渲染函数，创建虚拟DOM
+		}
+	1.v-on时当要获取原始的事件对象时用$event当实参传
+	2.局部注册组件
+		首先引入：import 组件的别名 form 组件路径,
+		然后注册：export default{
+			components : {
+				组件别名   //es6简写
+			}
+		}
+	3.全局注册
+		Vue.component('组件名'，{
+			组件的字符串
+			})
+	4.解决闪烁增加指令v-cloak；增加css[]
+五，css高级开发
+	1.css变量绑定
+	  css：
+		width: calc(var (--box-widyh,50)*1px);//--box-widyh变量名 50 变量默认值
+	  js：
+		//通过setProperty赋值给变量--box-watch
+		document.documentElement.style.setProperty('--box-watch',this.value);
+		//获取鼠标的相对位置
+		document.querySelector(".button").onmousemove=funtion(e){
+			
+		}
+六，vue-cli安装
+	1.vue init webapck  //安装项目模板
+	2.npm install //安装依赖包
+	3.npm run dev //运行项目
+	4.npm run build 打包上线
+	5.安装jQuery，bootstrap
+		1.安装各个包
+			npm install jquery --save-dev //安装jQuery
+			npm install bootstrap --save-dev //安装bootstrap
+			npm view jquery versions //查看jQuery版本
+		2.配置jQuery
+			在build目录下webpack.base.conf.js
+			开头引入webpack
+			const webpack = require('webpack')
+			在module.exports向外暴露加入
+		  plugins: [
+				new webpack.ProvidePlugin({
+			  $: "jquery",
+			  jQuery: "jquery",
+			  "windows.jQuery": "jquery"
+			})
+		  ]
+		3.引入bootstrap
+			在程序入口app.js加入
+			import 'bootstrap/dist/css/bootstrap.min.css'
+			import 'bootstrap/dist/js/bootstrap.min.js'
+			
+七，Vuex使用
+	1.安装 npm insrall vuex --save
+	2.创建store.js
+		1.引入vuex
+			import Vue from 'vue'
+			import Vuex from 'vuex'
+			Vue.use(Vuex)
+		2.实例化Vuex.Store对象
+			new Vuex.Store()
+		3.向外暴露
+			export const store = new Vuex.Store({
+				
+			})
+	3.Vuex.Store构造函数的属性
+		1.staict: true//开启严格模式
+		2.state:{}//数据
+		3.getters：{}//计算属性 //方法中默认接受的参数是state（ 数据）
+		3.mutations：{}//方法 （注意：mutations中不能执行异步操作）//方法中默认
+			接受state为第一个参数 可以传多个参数
+		4.actions：{}//类似与mutations Action 提交的是 mutation，而不是直接变更状态。
+			Action 可以包含任意异步操作。
+			注册action  如increment (context) {
+			context.commit('increment')
+			}
+
+	4.在vue组件中使用
+		1.在vue组件使用只能在计算属性中使用
+			this.$store.state  //取到store中的数据
+			this.$store.getters //取到store中的方法
+		2.在vue组件中调用store中的getters中的方法
+			在组件中新建方法不能用this.$store.mutations要采用this.$store.commt('方法名',[实参])
+		3.调用actions如this.$store.dispatch('方法名',[实参])
+八，canvas
 	1.常用语法
 		dom.getContext('2d')创建canvas执行上下文为2d对象
-六，文件上传（图片）
+九，文件上传（图片）
   1.ajax方式将数据放在FormData(form)对象中，js写的ajax：
   	    let xhr = new XMLHttpRequest()
             let formdata = new FormData($('#form')[0])
