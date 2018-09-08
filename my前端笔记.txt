@@ -131,9 +131,19 @@
 		//通过setProperty赋值给变量--box-watch
 		document.documentElement.style.setProperty('--box-watch',this.value);
 		//获取鼠标的相对位置
-		document.querySelector(".button").onmousemove=funtion(e){
-			
+		document.querySelector(".button").onmousemove=funtion(e){	
 		}
+	2.媒体查询注意事项
+		当用最小宽度来分界时界限的书写规则只能从上到下依次增大！
+		 例如：  @media (min-width: 1px){}
+		 	@media (min-width: 768px){}
+			@media (min-width: 992px){}
+		 	@media (min-width: 992px）{}
+			 （bootstrap的分界线）
+	 界限的划分的规则min-width:768px的含义是在768px以上（包含768px）采用这个样式；
+	 		max-width:767px的含义是在767px以下（包含767px）采用这个样式；
+	3.样式覆盖规则!important > 内联 > id > class （相同的选择器时style标签下的权限高于外部样式表，style下的相同样式的权限采取就近原则和定位越精确的权限就越高）
+	
 六，vue-cli安装
 	1.vue init webapck  //安装项目模板
 	2.npm install //安装依赖包
