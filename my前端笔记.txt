@@ -233,7 +233,7 @@
                 img.height = 50
                 img.src = this.result      //实例化实例化对象的图片的地址（图片是base64位的图片格式）
                 document.querySelector('.upimg').appendChild(img)
-      3.ajax跨域问题
+      3.ajax跨域问题（cors）
         在请求页设置(php)
 		header('Access-Control-Allow-Origin:*'); //设置允许访问的网站 * 统配 
 		header('Access-Control-Allow-Methods:POST');//响应类型
