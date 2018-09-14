@@ -248,4 +248,21 @@
 		    res.header('X-Powered-By', 'nodejs'); //自定义头信息，表示服务端用nodejs
 		    res.header('Content-Type', 'application/json;charset=utf-8');
 		    next();
-		});
+		}）;
+	4.html5 自带表单验证setCustomValidity（）
+		1.首先submit的条件是所有的表单的validity属性全部为fales才能提交成功
+		2.绑定事件一般是oninput,onchange。
+		例如：现在要判断用户修改密码时对用户进行错误提示
+			window.onload = function () {
+			    document.querySelector("input[name = 'new_password']").oninput = fn;
+			}
+			function fn() {
+			    let poss1 = document.querySelector("#pa1").value
+			    let poss2 = document.querySelector("#pa2").value
+			    console.log(poss1,poss2)
+			    if ($("#pa1").val() !== $("#pa2").val()) {
+				document.querySelector("input[name = 'new_password']").setCustomValidity("两次密码不正确！");
+			    } else {
+				document.querySelector("input[name = 'new_password']").setCustomValidity("");
+			    }
+			}
