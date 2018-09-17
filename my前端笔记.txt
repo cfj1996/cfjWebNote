@@ -266,3 +266,6 @@
 				document.querySelector("input[name = 'new_password']").setCustomValidity("");
 			    }
 			}
+	好用插件收集	
+		1.scrollreveal.js
+			滚动时动画显示（无限次）wow.js只展示一次
