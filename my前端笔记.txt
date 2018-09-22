@@ -266,6 +266,10 @@
 				document.querySelector("input[name = 'new_password']").setCustomValidity("");
 			    }
 			}
+	5.jq事件监听
+	 on注册一个永久监听事件,off用.on()绑定的事件处理程序，bind调试绑定多个事件，one为每一个匹配元素的特定事件（像click）绑定一个一次性的事件处理函数。
+
+
 	好用插件收集	
 		1.scrollreveal.js
 			滚动时动画显示（无限次）wow.js只展示一次
