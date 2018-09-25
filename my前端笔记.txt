@@ -273,6 +273,11 @@
               if(window.confirm('此操作不可逆，是否确认？')){
 	      
 	      }
+	 7.webstrom实用操作
+	 	vbase + tab键：快速生成vue模板
+		md name: 	创建文件夹
+		ytpe > name/index.html 再name文件夹下创建index.html文件
+		cd .>index.html 再当前目录创建文件
 	好用插件收集	
 		1.scrollreveal.js
 			滚动时动画显示（无限次）wow.js只展示一次
