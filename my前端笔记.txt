@@ -123,6 +123,24 @@
             }
         });
     }
+    	6.vue-router路由
+	 <router-view/>是存放变动的容器
+	<router-link></router-link>相当于a标签，属性to跳转的模块
+	在router的文件下index.js配置路由引入相应的.vue文件
+	如：inpot Foot from '@/components/foot'
+在routes数组中配置路由关系
+  {
+      path: '/', //路由路径
+      redirect: '/Tmain' //重定向的的路径
+      /*意思就是在地址栏输入www.qq.com时重定向到www.qq.com/Tmain*/
+    }, {
+      path: '/Tmain',
+      name: 'tmain',
+      component: Tmain //显示的模块
+    },
+    mode: 'history', //是否开启history模式
+  linkActiveClass: 'active' //当前的链接增加的class
+    
 五，css高级开发
 	1.css变量绑定
 	  css：
