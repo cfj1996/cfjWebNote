@@ -322,6 +322,8 @@
 		console.log(child2.colors); // ["red", "blue", "green"]
 	十一.jq事件监听
 	 on注册一个永久监听事件,off用.on()绑定的事件处理程序，bind调试绑定多个事件，one为每一个匹配元素的特定事件（像click）绑定一个一次性的事件处理函数。
+	 十二.nuxt.js
+每一个pages目录下的vue就是一条路由，动态路由在文件名前面加‘_’,每次配置nuxt,config.js都要重启项目。中间件不能再页面组件及components文件夹下的.vue文件，nuxt,config.js配置中间件在router下配置，pages与layouts直接配置。
 
 	6.操作提示框
               if(window.confirm('此操作不可逆，是否确认？')){
