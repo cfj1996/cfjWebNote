@@ -337,3 +337,15 @@
 	好用插件收集	
 		1.scrollreveal.js
 			滚动时动画显示（无限次）wow.js只展示一次
+	8.ubuntu下的pm2的常用命令
+创建文件夹：mkdir name
+创建文件：touch name
+删除一个文件夹：rm -rf name
+删除一个文件：rm -f name
+编辑文件：vim name
+进入vim的输入模式：i
+退出输入模式：按Esc + ：+ q(不保存)或者wq(保存)
+启动node项目：pm2 start name
+查看已启动的项目: pm2 list
+查看启动的端口： netstat -toln
+停止项目：pm2 stop id
