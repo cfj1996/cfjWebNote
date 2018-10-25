@@ -351,4 +351,5 @@
 停止项目：pm2 stop id
 nginx查看进程：ps -ef|grep nginx
 杀死nginx进程：kill -TERM 进程号
-启动nginx：nginx
+启动nginx：nginx，
+重启nginx: nginx -s reload
