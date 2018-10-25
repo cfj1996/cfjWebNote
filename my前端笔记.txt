@@ -349,3 +349,6 @@
 查看已启动的项目: pm2 list
 查看启动的端口： netstat -toln
 停止项目：pm2 stop id
+nginx查看进程：ps -ef|grep nginx
+杀死nginx进程：kill -TERM 进程号
+启动nginx：nginx
