@@ -353,6 +353,7 @@ nginx查看进程：ps -ef|grep nginx
 杀死nginx进程：kill -TERM 进程号
 启动nginx：nginx，
 重启nginx: nginx -s reload
+赋予文件的写入权限： chmod -R 777 name
 .conf的文件配置：
 在/etc/nginx/conf.d的目录下新增.conf的配置文件
 server {
