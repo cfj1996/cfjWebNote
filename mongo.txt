@@ -44,4 +44,4 @@ port=27017
                       Array   4
     限制输出条数limit()方法与查询指针起点Skip()
         如：db.name.find({},{"title":1,_id:0}).limit(2).skip(3) 输出查询到的所有数据的第4，5条数据
-    排序sort()
+    排序sort(1)
