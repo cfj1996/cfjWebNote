@@ -23,8 +23,9 @@ port=27017
   删除数据库：db.dropDatabase()
   创建集合: db.createCollection(name)
   删除集合: db.name.drop()
-  插入文档: db.name.insert({data})
-  更新文档: db.name.updata(<query>,<update> ,{data}) 
+  查看集合: show collections
+  插入文档: db.collections_name.insert({data})
+  更新文档: db.collections_name.updata(<query>,<update> ,{data}) 
     query: update的查询条件
     update: update的对象和一些更新的操作符
   删除文档: db.name.remove(<query>,<justOne>)
