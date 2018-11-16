@@ -23,17 +23,16 @@ apache重启：/etc/init.d/apache2 restart<br/>
 赋予文件的写入权限： chmod -R 777 name<br/>
 ## nginx.conf的文件配置：
 在/etc/nginx/conf.d的目录下新增.conf的配置文件
-server {
-        listen       80; //检测端口
-        server_name  order.lookk.cn;    #要访问的域名或者ip，如果有多个，用逗号分开
 
-        charset utf8;
-
-        location / {
-            proxy_pass       http://127.0.0.1:8080;               #映射到代理服务器，可以是ip加端口,
-            proxy_set_header Host      $host;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        server {
+            listen       80; //检测端口
+            server_name  order.lookk.cn;    #要访问的域名或者ip，如果有多个，用逗号分开
+            charset utf8;
+            location / {
+                    proxy_pass       http://127.0.0.1:8080;               #映射到代理服务器，可以是ip加端口,
+                    proxy_set_header Host      $host;
+                    proxy_set_header X-Real-IP $remote_addr;
+                    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 
        }
     }
