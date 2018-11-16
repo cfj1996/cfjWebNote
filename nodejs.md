@@ -37,10 +37,10 @@ apache重启：/etc/init.d/apache2 restart<br/>
        }
     }
 # nodejs常用的插件
-1.express 框架
-2.express-fileupload 文件上传
-3.express-session session设置
-4.mongoose 数据库
-5.pug 模板引擎
-6.svg-captche svg验证码
-7.crypto md5加密
+> 1.express 框架
+> 2.express-fileupload 文件上传
+> 3.express-session session设置
+> 4.mongoose 数据库
+> 5.pug 模板引擎
+> 6.svg-captche svg验证码
+> 7.crypto md5加密
