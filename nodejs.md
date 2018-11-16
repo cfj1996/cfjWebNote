@@ -37,10 +37,101 @@ apache重启：/etc/init.d/apache2 restart<br/>
        }
     }
 # nodejs常用的插件
-> 1.express 框架
-> 2.express-fileupload 文件上传
-> 3.express-session session设置
-> 4.mongoose 数据库
-> 5.pug 模板引擎
-> 6.svg-captche svg验证码
-> 7.crypto md5加密
+1.express 框架<br>
+
+        const express = require('express');
+        const app = express();
+2.express-fileupload 文件上传<br>
+   
+        const upload = require('express-fileupload')
+        app.use(upload({
+                limits: {fileSize: 50 * 1024 * 1024}//文件上传大小限制
+        }))
+
+3.express-session session设置(注意session的use一定要路由的前面，否则获取不到session)<br>
+
+        const session = require('express-session') //session
+        app.use(session({
+            secret :  'secret',
+            resave : true,
+            saveUninitialized: false,
+            cookie : {
+                maxAge : 1000 * 60 * 3,
+            },
+        }));
+        
+4.mongoose 数据库<br>
+
+        const mongoose = require('mongoose')
+        //mongodb://mao:aaa123456@ds037768.mlab.com:37768/jia-juan-mao
+        const url = 'mongodb://127.0.0.1:27017/myapp' //数据库地址
+        mongoose.connect(url, {useNewUrlParser: true})
+        mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
+        mongoose.connection.once('open', function (callback) {
+            console.log("数据库成功连接");
+        });
+5.pug 模板引擎<br>
+        
+        const cookieParser = require('cookie-parser');
+        const logger = require('morgan');
+        app.set('views', path.join(__dirname, 'views'));
+        app.set('view engine', 'pug');
+
+        app.use(logger('dev'));
+        app.use(express.json());
+        app.use(express.urlencoded({ extended: false }));
+        app.use(cookieParser());
+        app.use(express.static(path.join(__dirname, 'public')));
+        
+6.svg-captche svg验证码<br>
+        
+        //这个是在路由文件中注册的验证码
+        const express = require('express');
+        const router = express.Router();
+        const svgcode = require('svg-captcha')
+        router.get('/imgecho', function(req, res){
+        let conf = {
+                size: 4,
+                ignoreChars: '0OoliI',
+                noise: 2,
+                height: 50
+        } 
+            let imgcode = svgcode.create(conf)
+            req.session.yzma = imgcode.text.toLowerCase()
+            let codeData = {
+                img: imgcode.data
+            }
+            res.send(codeData);
+        })
+        module.exports = router;
+        
+7.crypto md5加密<br>
+        
+        const crypto = require('crypto')
+         let md5poss = crypto.createHash('md5').update('数据').digest('hex')
+## mongoose操作数据库
+ 1.要在数据库建立对应的数据库如：myapps <br>
+ 2.链接的数据库链接为： mongodb://127.0.0.1:27017/myapps （本地的数据）
+ 3.model模块操作数据库
+        
+        const mongoose = require('mongoose')
+        //一切起于schema
+        let Schema = mongoose.Schema;
+        //设计表格式
+        let VideolsitSchema = new Schema({
+            name: String,
+            describe: String,
+            videocode: String,
+            videoimg: String,
+            ifoff: {type: Boolean, default: true},
+            time: {type: Date, default: Date.now}
+        })
+        //创建数据表 会在myapps中生成username的数据表
+        let UserTable = mongoose.model("username", VideolsitSchema)
+        //向外暴露模块
+        module.exports = UserTable
+        <hr>
+        增删改查
+        > new UserTable(data).save(fn)
+        > 
+        
