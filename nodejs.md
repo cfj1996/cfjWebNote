@@ -130,7 +130,7 @@ apache重启：/etc/init.d/apache2 restart<br/>
         let UserTable = mongoose.model("username", VideolsitSchema)
         //向外暴露模块
         module.exports = UserTable
-        <hr/>
+        
         增删改查
         > new UserTable(data).save(fn)
         > 
