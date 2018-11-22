@@ -135,3 +135,7 @@ apache重启：/etc/init.d/apache2 restart<br/>
         > new UserTable(data).save(fn)
         > 
         
+##nodejs的请求值
+        1.get请求值的获取 req.query 
+        2.post请求 要载入 body-parser 中间件 才能用req.body
+        3.file文件 req.files
