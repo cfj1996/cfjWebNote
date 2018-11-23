@@ -37,3 +37,10 @@
     prom1().then((data)=>{return prom2(data)}).then((data2)=>{
         console.log(data2)
     })
+    // async操作
+      let Al = async function() {
+         let po2 = await videos()
+         let po1 = await homev()
+         console.log(po1, po2)
+     }
+    Al()
