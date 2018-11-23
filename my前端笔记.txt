@@ -45,6 +45,7 @@
 		（）=>console.log("a")
 	4.模块化
 	5.数据解构
+	6.Promise
 三，webpack使用
 	1.webpackde 的单个文件的打包：webpack 打包文件 输出文件
 	2.webpack.config.js配置
