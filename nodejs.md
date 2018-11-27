@@ -8,6 +8,26 @@
 退出输入模式：按Esc + ：+ q(不保存)或者wq(保存)<br/>
 启动node项目：pm2 start name<br/>
 查看已启动的项目: pm2 list<br/>
+# ubuntu下的apache命令
+apache启动: /etc/init.d/apache2 start<br/>
+apache暂停：/etc/init.d/apache2 stop<br/>
+apache重启：/etc/init.d/apache2 restart<br/>
+赋予文件的写入权限： chmod -R 777 name<br/>
+
+# ubuntu下的nginx命令
+## nginx信号操作 kill -信号选项 nginx主进程号
+### nginx常用信号
+TERM, INT：	Quick shutdown <br>
+QUIT:	Graceful shutdown  优雅的关闭进程,即等请求结束后再关闭 <br>
+HUP :	Configuration reload ,Start the new worker processes with
+        a new configuration Gracefully shutdown the old worker processes
+        改变配置文件,平滑的重读配置文件 <br>
+USR1:	Reopen the log files 重读日志,在日志按月/日分割时有用 <br>
+USR2:	Upgrade Executable on the fly 平滑的升级<br>
+WINCH:	Gracefully shutdown the worker processes 优雅关闭旧的进程(配合USR2来进行升级)<br>
+
+
+
 查看启动的端口： netstat -toln<br/>
 停止项目：pm2 stop id<br/>
 nginx查看进程：ps -ef|grep nginx<br/>
@@ -18,10 +38,7 @@ nginx查看进程：ps -ef|grep nginx<br/>
 启动php-fpm:运行php-fpm位置<br/>
 重启nginx: nginx -s reload<br/>
 优雅启动： nginx -HUP 进程号 <br>
-apache启动: /etc/init.d/apache2 start<br/>
-apache暂停：/etc/init.d/apache2 stop<br/>
-apache重启：/etc/init.d/apache2 restart<br/>
-赋予文件的写入权限： chmod -R 777 name<br/>
+
 ## nginx.conf的文件配置：
 在/etc/nginx/conf.d的目录下新增.conf的配置文件
 
