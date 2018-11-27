@@ -128,6 +128,9 @@ nginx查看进程：ps -ef|grep nginx<br/>
         
         const crypto = require('crypto')
          let md5poss = crypto.createHash('md5').update('数据').digest('hex')
+8. compression gzip压缩
+let compression = require('compression')
+app.use(compression()) //最前面
 ## mongoose操作数据库
  1.要在数据库建立对应的数据库如：myapps <br>
  2.链接的数据库链接为： mongodb://127.0.0.1:27017/myapps （本地的数据）
