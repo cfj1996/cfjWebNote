@@ -1,5 +1,5 @@
 # 1.ubuntu下的pm2的常用命令
-创建文件夹：mkdir name<br
+创建文件夹：mkdir name<br>
 创建文件：touch name<br>
 删除一个文件夹：rm -rf name<br>
 删除一个文件：rm -f name<br>
@@ -17,6 +17,7 @@ nginx查看进程：ps -ef|grep nginx<br/>
 停止php-fpm:pkill php-fpm<br/>
 启动php-fpm:运行php-fpm位置<br/>
 重启nginx: nginx -s reload<br/>
+优雅启动： nginx -HUP 进程号 <br>
 apache启动: /etc/init.d/apache2 start<br/>
 apache暂停：/etc/init.d/apache2 stop<br/>
 apache重启：/etc/init.d/apache2 restart<br/>
