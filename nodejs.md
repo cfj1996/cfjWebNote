@@ -30,6 +30,7 @@ WINCH:	Gracefully shutdown the worker processes 优雅关闭旧的进程(配合U
 
 查看启动的端口： netstat -toln<br/>
 停止项目：pm2 stop id<br/>
+查看配置文件是否正确： nginx -t
 nginx查看进程：ps -ef|grep nginx<br/>
 杀死nginx进程：kill -TERM 进程号<br/>
 启动nginx：nginx，<br/>
@@ -37,7 +38,7 @@ nginx查看进程：ps -ef|grep nginx<br/>
 停止php-fpm:pkill php-fpm<br/>
 启动php-fpm:运行php-fpm位置<br/>
 重启nginx: nginx -s reload<br/>
-优雅启动： nginx -HUP 进程号 <br>
+优雅启动： nginx -HUP 进程号 或者 kill -HUP `cat /run/nginx.pid` （反引号中的是nginx的pid文件，cat返回进程号）<br>
 
 ## nginx.conf的文件配置：
 在/etc/nginx/conf.d的目录下新增.conf的配置文件
