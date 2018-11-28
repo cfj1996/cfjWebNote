@@ -78,19 +78,19 @@
 			3.启动webpack:npm run build;//和package.json中的build同名
 			4.启动项目：npm start
 # 四，vue的使用
-* vue最常用的属性
-	> data:Vue 实例的数据对象
-	> components：Vue实例配置局部注册组件
-	> computed:计算属性
-	> watch：侦听属性
-	> filters：过滤器
-	> methods:Vue实例方法
-	> created：在实例创建完成后被立即调用，完成初始化操作
-	> mounted：el挂载到Vue实例上了，开始业务逻辑操作
-	> beforeDestroy：实例销毁之前调用
-	> props:用于接收来自父组件的数据
-	> template：组件模板
-	> render：渲染函数，创建虚拟DOM	> 
+## vue最常用的属性
+	* data:Vue 实例的数据对象
+	* components：Vue实例配置局部注册组件
+	* computed:计算属性
+	* watch：侦听属性
+	* filters：过滤器
+	* methods:Vue实例方法
+	* created：在实例创建完成后被立即调用，完成初始化操作
+	* mounted：el挂载到Vue实例上了，开始业务逻辑操作
+	* beforeDestroy：实例销毁之前调用
+	* props:用于接收来自父组件的数据
+	* template：组件模板
+	* render：渲染函数，创建虚拟DOM	> 
 		
 1.v-on时当要获取原始的事件对象时用$event当实参传
 2.局部注册组件
@@ -104,7 +104,9 @@
 		Vue.component('组件名'，{
 			组件的字符串
 			})
-4.解决闪烁增加指令v-cloak；增加css[]
+4.解决闪烁增加指令v-cloak
+* 增加css[]
+
 5.双向数据绑定的原理运用Object.defineProperty(Obj,key,{})监听Obj下的属性
 		
 	封装函数如下：
@@ -173,6 +175,7 @@
 	精确的权限就越高）
 	
 # 六,vue-cli安装
+
 1.vue init webapck  //安装项目模板
 2.npm install //安装依赖包
 3.npm run dev //运行项目
@@ -353,13 +356,14 @@
 	      
 	      }
 		
-#十一.jq事件监听
+# 十一.jq事件监听
 
  * on注册一个永久监听事件,
  * off用.on()绑定的事件处理程序，
  * bind调试绑定多个事件，
  * one为每一个匹配元素的特定事件（像click）绑定一个一次性的事件处理函数。
  # 十二.nuxt.js
+ 
 * 每一个pages目录下的vue就是一条路由，
 * 动态路由在文件名前面加‘_’,每次配置nuxt,config.js都要重启项目。
 * 中间件不能再页面组件及components文件夹下的.vue文件，
