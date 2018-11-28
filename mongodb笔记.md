@@ -31,18 +31,18 @@ npm install mongoose --save
     > projection: 指定返回的键 <br>
     > pretty:格式化的方式来显示 <br>
   * 条件操作符： <br>
-              > （>) 大于 - $gt <br>
-              > (<) 小于 - $lt <br>
-              > (>=) 大于等于 - $gte <br>
-              > (<= ) 小于等于 - $lte <br>
+      > (>) 大于 - $gt <br>
+      > (<) 小于 - $lt <br>
+      > (>=) 大于等于 - $gte <br>
+      > (<=) 小于等于 - $lte <br>
   * 如:db.name.find({likes : {$gt : 100}}) //"likes" 大于 100 的数据<br>
    
   * 类型操作符：db.name.find({"title" : {$type: type}}) 
       > type对应的类型： 
-                      >> Double	 1	 
-                      >> String	2	 
-                      >> Object	3	 
-                      >> Array   4
+          >> Double	1	 
+          >> String	2	 
+          >> Object	3	 
+          >> Array  4
     * 限制输出条数limit()方法与查询指针起点Skip()
        > 如：db.name.find({},{"title":1,_id:0}).limit(2).skip(3) 输出查询到的所有数据的第4，5条数据
     * 排序sort(1)
