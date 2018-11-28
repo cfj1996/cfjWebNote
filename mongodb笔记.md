@@ -1,14 +1,17 @@
 # 一.安装数据库
 npm install mongoose --save
 ## 1.mongo.conf配置文件
-dbpath=D:\MongoDB\data <br>
-#数据库文件存放位置<br>
-logpath=D:\MongoDB\log\mongo.log<br>
-#日志文件存放位置<br>
-logappend=true <br>
-journal=true <br>
-quiet=true  <br>
-port=27017 #启动端口<br>
+
+
+    dbpath=D:\MongoDB\data
+    #数据库文件存放位置
+    logpath=D:\MongoDB\log\mongo.log
+    #日志文件存放位置
+    logappend=true
+    journal=true
+    quiet=true 
+    port=27017 #启动端口
+
 ## 2.开启服务: ./mongod --config "mongo.conf配置文件路径"
 ## 3.mongoshell链接: 再新的cmd中输入 ./mongo (上一个窗口不能关)
 
