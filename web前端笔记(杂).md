@@ -181,7 +181,6 @@
 	精确的权限就越高）
 	
 # 六,vue-cli安装
-
 1.vue init webapck  //安装项目模板
 2.npm install //安装依赖包
 3.npm run dev //运行项目
