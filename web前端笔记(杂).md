@@ -181,11 +181,11 @@
 	精确的权限就越高）
 	
 # 六,vue-cli安装
-1.vue init webapck  //安装项目模板
-2.npm install //安装依赖包
-3.npm run dev //运行项目
-4.npm run build 打包上线npm list name 查看插件name的版本
-5.安装jQuery，bootstrap
+1. vue init webapck  //安装项目模板
+2. npm install //安装依赖包
+3. npm run dev //运行项目
+4. npm run build 打包上线npm list name 查看插件name的版本
+5. 安装jQuery，bootstrap
 
 	1.安装各个包
 		npm install jquery --save-dev //安装jQuery
