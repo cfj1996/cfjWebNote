@@ -1,8 +1,11 @@
 # 一,	模块化开发
-	1，运用立即执行函数（）（）
+1，运用立即执行函数（）（）
+
 		传入全局对象如：window，jQuery将立即执行函数中将数据向外暴露！window.foo=foo;
-	2,模块化引入
-		1，commonJS规范运用
+		
+2,模块化引入
+
+	1，commonJS规范运用
 		通过 module.exports 语句来导出对象为模块
 		module.exports = value；
 		再通过 require 语句来引入
@@ -32,7 +35,7 @@
 				npm instrall browserify --save-dev
 				再本地安装browserify开发板！
 				运行browserify 输入文件地址 -o 输出文件地址
-		2，es6的规范使用
+	2，es6的规范使用
 			向外暴露export value；
 			引用 import {value} from '文件地址'
 			{value}是ES6的对象解构
@@ -132,10 +135,10 @@
 	    }
 	    
 6.vue-router路由
-	* <router-view/>是存放变动的容器
-	* <router-link></router-link>相当于a标签，属性to跳转的模块
-	* 在router的文件下index.js配置路由引入相应的.vue文件
-	* 如：inpot Foot from '@/components/foot'
+* <router-view/>是存放变动的容器
+* <router-link></router-link>相当于a标签，属性to跳转的模块
+* 在router的文件下index.js配置路由引入相应的.vue文件
+* 如：inpot Foot from '@/components/foot'
 > 在routes数组中配置路由关系
 
 	  {
