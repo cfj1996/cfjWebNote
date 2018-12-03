@@ -1,6 +1,6 @@
 # 翻墙工具
 * Shadowsocks.exe 小飞机 
-* SSTap-beta 人人翻墙 
+* SSTap-beta 人人翻墙 https://free.ssrbest.com/
 
 # 编辑工具
 
