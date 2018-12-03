@@ -163,3 +163,38 @@ nginx查看进程：ps -ef|grep nginx<br/>
         1.get请求值的获取 req.query <br>
         2.post请求 要载入 body-parser 中间件 才能用req.body <br>
         3.file文件 req.files <br>
+
+## mysql数据库的操作
+1. sql语句
+
+        let sql = 'SELECT * FROM `books` WHERE `author` = "David"'
+        //变量用反引号
+        
+2. 连接数据库
+        
+        const mysql = require('mysql')
+        let connection = mysql.createConnection({
+            host: 'localhost',
+            user: "root",
+            password: "root",
+            database: "waijie"
+        })
+        connection.connect()
+        
+        let chacun = function () {
+        let inquire = `SELECT * FROM user WHERE name = "陈方杰"`
+            return new Promise(function (resolve, reject) {
+                connection.query(inquire, function (err, data) {
+                    if (err) reject(err)
+                    else connection.end()
+                        resolve(data)
+                })
+            })
+        }
+        app.get('/', async function (req, res) {
+        let data = await chacun()
+        console.log(data[0].name)
+        res.send(data)
+        // data = JSON.stringify(data)
+
+        })
