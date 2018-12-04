@@ -14,6 +14,21 @@ apache暂停：/etc/init.d/apache2 stop<br/>
 apache重启：/etc/init.d/apache2 restart<br/>
 赋予文件的写入权限： chmod -R 777 name<br/>
 
+# ubuntu下的安装node
+## 更新ubuntu软件源
+* sudo apt-get update
+* sudo apt-get install -y python-software-properties software-properties-common
+* sudo add-apt-repository ppa:chris-lea/node.js
+## 安装node
+* sudo apt-get install nodejs
+* sudo apt install nodejs-legacy
+* sudo apt install npm
+## 安装 n 管理包
+* sudo npm install n -g
+## 安装最新的nodejs（stable版本）
+* sudo n stable
+* sudo node -v
+
 # ubuntu下的nginx命令
 ## nginx信号操作 kill -信号选项 nginx主进程号
 ### nginx常用信号
