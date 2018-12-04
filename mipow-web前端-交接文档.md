@@ -14,6 +14,13 @@
     1. 进入后台
     2. 进入All products 栏目 点击Add product
     3. 填写 Title, Description
+    
+             //Description处的代码第一张图片是电脑端的第二张是手机端的，如果要改只需要替换对应的图片链接。
+            <img class="img-responsive hidden-xs center-block"
+            src="https://cdn.shopify.com/s/files/1/1268/0357/files/che_chong_pc.png?3826134757160762326" />
+            <img class="img-responsive visible-xs center-block"                 
+            src="https://cdn.shopify.com/s/files/1/1268/0357/files/che_chong_madie.png?3826134757160762326" />
+            
     4. 上传导航栏的一张图片800*800，并将图片上的Alt设为nev
     5. 上传产品的细节图800*800，并将图片上的Alt设为color或者size或者other
     6. 上传首页的2张新品图片700*640，图片命名为new-hover与new-active（如果此产品不在首页的NEW ARRIVALS处展示，可以省去这一步）
