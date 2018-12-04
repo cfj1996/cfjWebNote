@@ -45,7 +45,7 @@ WINCH:	Gracefully shutdown the worker processes 优雅关闭旧的进程(配合U
 
 查看启动的端口： netstat -toln<br/>
 停止项目：pm2 stop id<br/>
-查看配置文件是否正确： nginx -t
+查看配置文件是否正确： nginx -t <br/>
 nginx查看进程：ps -ef|grep nginx<br/>
 杀死nginx进程：kill -TERM 进程号<br/>
 启动nginx：nginx，<br/>
