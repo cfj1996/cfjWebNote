@@ -14,7 +14,7 @@ apache暂停：/etc/init.d/apache2 stop<br/>
 apache重启：/etc/init.d/apache2 restart<br/>
 赋予文件的写入权限： chmod -R 777 name<br/>
 
-# ubuntu下的安装node
+# 2.ubuntu下的安装node
 ## 更新ubuntu软件源
 * sudo apt-get update
 * sudo apt-get install -y python-software-properties software-properties-common
@@ -29,7 +29,7 @@ apache重启：/etc/init.d/apache2 restart<br/>
 * sudo n stable
 * sudo node -v
 
-# ubuntu下的nginx命令
+# 3.ubuntu下的nginx命令
 ## nginx信号操作 kill -信号选项 nginx主进程号
 ### nginx常用信号
 TERM, INT：	Quick shutdown <br>
@@ -41,7 +41,20 @@ USR1:	Reopen the log files 重读日志,在日志按月/日分割时有用 <br>
 USR2:	Upgrade Executable on the fly 平滑的升级<br>
 WINCH:	Gracefully shutdown the worker processes 优雅关闭旧的进程(配合USR2来进行升级)<br>
 
+# 4.小白兔（navicat）连接不上服务器的数据库的解决方案
+* 报错 80070007: SSH Tunnel: Server does not support diffie-hellman-group1-sha1 for keyexchange
+1. 进入 /etc/ssh/sshd_config 在最下面 加入下面代码
 
+        KexAlgorithms diffie-hellman-group1-sha1,curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-                   nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group14-sha1
+        Ciphers 3des-cbc,blowfish-cbc,aes128-cbc,aes128-ctr,aes256-ctr
+
+2. 执行下面代码
+
+        ssh-keygen -A
+        
+3. 重启SSH
+
+        service ssh restart
 
 查看启动的端口： netstat -toln<br/>
 停止项目：pm2 stop id<br/>
