@@ -1,3 +1,4 @@
+git 不能committed出现warning: LF will be replaced by CRLF输入git config core.autocrlf false
 # vue学习笔记
 ## vue-cli3.0生成项目
   vue create 项目名
