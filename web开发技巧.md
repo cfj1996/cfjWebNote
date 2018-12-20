@@ -4,6 +4,7 @@
 
 # 编辑工具
       webstorm替换网址的正则表达式(https?:\/\/)(www\.).[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&\/\/=]*)
+      匹配id的正则表达式： /id="[^"]*"/
 # js 的 IntersectionObserver API 使用教程
 元素可见监听器
 * 语法
