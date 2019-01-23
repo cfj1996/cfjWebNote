@@ -5,6 +5,7 @@ git 不能committed出现warning: LF will be replaced by CRLF输入git config co
 ## vue的属性
 * data(){}//数据
 * props: [] //父传子接受的值
+  注意：要么传，都么不传，当出现中间的情况的时候用计算属性裁解决，不要写默认值
 * computed: {}//计算属性
 * methods: {}//方法
 
