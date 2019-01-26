@@ -360,6 +360,19 @@
               if(window.confirm('此操作不可逆，是否确认？')){
 	      
 	      }
+	      
+## js去除空格
+
+	str为要去除空格的字符串:
+	去除所有空格:
+	str   =   str.replace(/\s+/g,"");
+	去除两头空格:
+	str   =   str.replace(/^\s+|\s+$/g,"");
+	去除左空格：
+	str=str.replace( /^\s/, '');
+	去除右空格：
+	str=str.replace(/(\s$)/g, "");
+
 		
 # 十一.jq事件监听
 
