@@ -12,3 +12,29 @@ git 不能committed出现warning: LF will be replaced by CRLF输入git config co
 
 ## vue的生命周期
 * <img src="https://cn.vuejs.org/images/lifecycle.png" />
+
+## nuxt跨域（nuxt.config.js）配置
+
+
+    server: {
+      port: 3121, // default: 3000
+      host: '192.168.0.195', // default: localhost
+    },//设置启动端口
+    modules: [
+      ['@nuxtjs/axios', {
+      //设置axios的相对路径的端口，因为页面的axios请求的路径都是相对路径，由于页面跳转的时候是发起的前台的ajax请求，而页面加载受后端发起的http请求
+        baseURL: 'http://127.0.0.1:3121'
+      }],
+      '@nuxtjs/proxy',
+    ]
+    proxy: {
+    ////前端发起的带/api的请求代理到这个地址上，即api的端口号
+      '/api': {
+        target: 'http://127.0.0.1:3120',
+        pathRewrite: {
+          '^/api' : '/'
+        }
+      }
+    }
+  
+  
