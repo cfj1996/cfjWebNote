@@ -372,6 +372,11 @@
 	str=str.replace( /^\s/, '');
 	去除右空格：
 	str=str.replace(/(\s$)/g, "");
+	
+## js获取url的参数值
+
+	let reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)", "i"),
+	r = window.location.search.substr(1).match(reg),a = r[2]
 
 		
 # 十一.jq事件监听
