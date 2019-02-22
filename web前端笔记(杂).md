@@ -222,6 +222,8 @@
 		export const store = new Vuex.Store({
 
 		})
+	4.挂在new Vue({store}
+	
 3.Vuex.Store构造函数的属性
 
 	1.staict: true//开启严格模式
