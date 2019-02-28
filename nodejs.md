@@ -8,6 +8,13 @@
 退出输入模式：按Esc + ：+ q(不保存)或者wq(保存)<br/>
 启动node项目：pm2 start name<br/>
 查看已启动的项目: pm2 list<br/>
+    3. 根据进程pid查端口：
+
+       netstat -nap | grep pid
+
+    4.  根据端口port查进程
+
+       netstat -nap | grep port
 # ubuntu下的apache命令
 apache启动: /etc/init.d/apache2 start<br/>
 apache暂停：/etc/init.d/apache2 stop<br/>
