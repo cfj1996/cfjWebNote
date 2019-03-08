@@ -263,3 +263,9 @@ nginx查看进程：ps -ef|grep nginx<br/>
                 1.sourceKey: 资源key 表示源模型上的资源匹配键
                 2.targetKey： 目标建 表示目标模型上的与资源模型匹配的键 （默认是和foreignKey ）
                 3.foreignKey： 外键 设置目标模型上的外键
+        2. 查询语法：
+        
+        mode1.findAll或者findAndCountAll ({
+                include: [{model2,where,...}]
+                where,...
+            })
