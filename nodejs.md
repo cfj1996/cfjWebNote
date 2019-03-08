@@ -233,3 +233,33 @@ nginx查看进程：ps -ef|grep nginx<br/>
         // data = JSON.stringify(data)
 
         })
+        
+    3.sequelizejs ORM 操作联表查询
+        
+        1. 定义模型的关系
+            1：1 关系
+                Model1.associate = () => {
+                    Model1.BelongsTo(model2,{键值对关系})
+                }
+            1：n 关系
+                  Model1.associate = () => {
+                    Model1.hasMany(model2,{键值对关系})
+                }
+            n: 1 关系
+                   Model1.associate = () => {
+                    Model1.belongsTo(model2,{键值对关系})
+                }
+            n: m 关系
+                
+                   Model1.associate = () => {
+                    Model1.belongsToMany(model2,{键值对关系})
+                }
+            
+            ps: 
+                Model1: 源模型
+                model2: 目标模型
+            
+                键值对关系说明：
+                1.sourceKey: 资源key 表示源模型上的资源匹配键
+                2.targetKey： 目标建 表示目标模型上的与资源模型匹配的键 （默认是和foreignKey ）
+                3.foreignKey： 外键 设置目标模型上的外键
