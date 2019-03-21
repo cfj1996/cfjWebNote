@@ -179,6 +179,7 @@
 
 	!important > 内联 > id > class （相同的选择器时style标签下的权限高于外部样式表，style下的相同样式的权限采取就近原则和定位越
 	精确的权限就越高）
+4.在页面上输出textarea文本输入框的换行用pre标签，让内容自动换行加white-space: pre-wrap;word-wrap: break-word;
 	
 # 六,vue-cli安装
 1. vue init webapck  //安装项目模板
