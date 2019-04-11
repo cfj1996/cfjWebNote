@@ -1,6 +1,7 @@
 ## egg常用配置
   
-    1. 监听端口
+  1. 监听端口
+  
       config.cluster = {
             listen: {
               path: '',
@@ -8,13 +9,17 @@
               hostname: '127.0.0.7',
             },
           };
-    2. 关闭csrf
+          
+  2. 关闭csrf
+  
       config.security = {
         csrf: {
           enable: false,
         },
       };
-    3.  sequelize连接数据库
+      
+  3.  sequelize连接数据库
+  
         config.sequelize = {
           username: 'root',
           password: 'root',
@@ -24,7 +29,9 @@
           database: 'sequelize',
           timezone: '+08:00' // 时区
         };
-    4.  模型的定义
+        
+  4.  模型的定义
+  
       // egg会默认将模型名变为复数
         "use strict";
           module.exports = app => {
@@ -38,6 +45,12 @@
                name: {
                 type: STRING,
                 field: 'userName'映射到数据表的userName字段
+                set(val){ // 写入数据劫持
+                  this.setDataValue('name', val + '123456')
+                },
+                get(){ // 读取数据劫持
+                return '数据被劫持' + this.getDataValue('add_time')
+                }
               },
               add_time: {
                 type: DATE,
@@ -50,6 +63,10 @@
               createdAt: false, 
               updatedAt: 'updateTimestamp' // 将updatedAt绑定到updateTimestamp字段上
               tableName: 'user' // 表名
+              freezeTableName: true, // 取消egg将模型名改为复数
             })
             return User
           }
+       
+   5.模型的方法
+   
