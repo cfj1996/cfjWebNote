@@ -70,3 +70,32 @@
        
    5.模型的方法
    
+            1.创建或查找
+              const res = await modul.create(data) // 创建单条数据 返回的是一个Promise对象
+              res.get({plain: true}) // 返回插入的数据 res.get('name') //返回插入的name字段值
+              
+              const res = await modul.bulkCreate([data1.data2,data3....])创建多条数据
+              res[0].get({plain: true})
+              
+            2.更改，递增
+              更改 modul.update(data, {where:{/*条件*/})
+              递增 
+              User.findByPk(1).then(user => {
+                return user.increment('name', {by: 2})
+              }).then(user => {
+              })
+            
+            3.硬刪除,软删除
+              硬删除 直接调用modul.destroy({where:{/*条件*/}})
+              软删除在模型中增加 paranoid: true, 调用modul.destroy({where:{/*条件*/}})时会将deleted_at的字段添加当前时间，如果想硬删除增加                 force: true的属性，如果要取消删除model.restore({where:{/*条件*/});
+            
+            4.查询
+            
+            5.重新加载
+            Person.findOne({ where: { name: 'john' } }).then(person => {
+            person.name = 'jane'
+            console.log(person.name) // 'jane'
+            person.reload().then(() => {
+              console.log(person.name) // 'john'
+            })
+          })
