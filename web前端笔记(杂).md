@@ -380,6 +380,9 @@
 
 	let reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)", "i"),
 	r = window.location.search.substr(1).match(reg),a = r[2]
+	
+	js获取特殊字符之间的值
+	'aaa{{111}}nnn{{4444}}'.match(/(?<={{).*?(?=}})/g)
 
 		
 # 十一.jq事件监听
