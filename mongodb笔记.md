@@ -47,7 +47,7 @@ npm install mongoose --save
        > 如：db.name.find({},{"title":1,_id:0}).limit(2).skip(3) 输出查询到的所有数据的第4，5条数据
     * 排序sort(1)
 
-## egg-mongoose
+## 5.egg-mongoose
      
     插件安装
         npm i  egg-mongoose --save
