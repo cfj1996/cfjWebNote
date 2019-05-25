@@ -46,3 +46,38 @@ npm install mongoose --save
     * 限制输出条数limit()方法与查询指针起点Skip()
        > 如：db.name.find({},{"title":1,_id:0}).limit(2).skip(3) 输出查询到的所有数据的第4，5条数据
     * 排序sort(1)
+
+## egg-mongoose
+     
+    插件安装
+        npm i  egg-mongoose --save
+    插件配置
+        plugin.js文件配置
+        module.exports = {
+            mongoose : {
+                enable: true,
+                package: 'egg-mongoose',
+            }
+        };
+        config.default.js文件配置
+          // mongoose
+          config.mongoose = {
+            client: {
+              url: 'mongodb://127.0.0.1/test1',
+              options: {},
+              // mongoose global plugins, expected a function or an array of function and options
+              plugins: [],
+            },
+          };
+          模型定义
+            module.exports = app => {
+                const mongoose = app.mongoose;
+                const Schema = mongoose.Schema;
+
+                const UserSchema = new Schema({
+                    name: { type: String  },
+                    age: { type: Number  },
+                });
+                // egg对应的集合名默认加s，所以model方法的第三个参数传集合名
+                return mongoose.model('User', UserSchema, 'user');
+            }
