@@ -37,4 +37,12 @@ git 不能committed出现warning: LF will be replaced by CRLF输入git config co
       }
     }
   
+  ## vue插件开发 npm包开发
   
+     1.package.json 配置
+        {
+         "name": "vue-quill-img-editor", // 引入包时的名称
+          "main": "dist/vue-quill-img-editor.js", // 引入包时对应的文件
+        }
+     2. webpack，babel配置
+        
