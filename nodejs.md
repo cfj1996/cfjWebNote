@@ -239,7 +239,7 @@ nginx查看进程：ps -ef|grep nginx<br/>
         1. 定义模型的关系
             1：1 关系
                 Model1.associate = () => {
-                    Model1.BelongsTo(model2,{键值对关系})
+                    Model1.belongsTo(model2,{键值对关系})
                 }
             1：n 关系
                   Model1.associate = () => {
@@ -269,3 +269,13 @@ nginx查看进程：ps -ef|grep nginx<br/>
                 include: [{model2,where,...}]
                 where,...
             })
+        const res = await app.model.User.findOne({
+            attributes: [ app.Sequelize.col('img.imgurl'), 'id', 'amount', 'username' ],
+                include: [{
+                model: app.model.Userimg,
+                as: 'img',
+                attributes: [ ],
+            }],
+            raw: true,
+            where: { username: ctx.request.body.userName },
+        });
