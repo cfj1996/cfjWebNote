@@ -1,3 +1,13 @@
+# react 的配置插件react-app-rewired介绍。
+  1. 安装后启动命令换成react-app-rewired react等
+  2. 所有的配置都config-overrides.js已插入的形式。
+  
+    module.exports = function override(config, env) { 
+    // 已插入的形式。如数组的unshift,注意不能用push webpack的加载顺序是从后向前加载。
+      return config
+    }
+
+
 ## 1.css的module的配置。注意rules的加载顺序从后向前加载处理
   react为例配置less，采用插件react-app-rewired。less-loads->(postcss-loader->)css-loader->style-loader
 
