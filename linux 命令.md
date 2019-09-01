@@ -36,3 +36,6 @@
     WINCH:	Gracefully shutdown the worker processes 优雅关闭旧的进程(配合USR2来进行升级)。/n
   7. nginx 编译安装
     https://www.cnblogs.com/stulzq/p/9291223.html 参考
+    
+  ## 4. node安装
+  https://segmentfault.com/a/1190000008462910 参考
