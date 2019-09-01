@@ -26,9 +26,11 @@
   4. nginx -v            查看版本
   5. nginx -t            检查nginx的配置文件
   6. nginx常用信号
-    TERM, INT：	Quick shutdown 。
-    QUIT:	Graceful shutdown 优雅的关闭进程,即等请求结束后再关闭 。
-    HUP :	Configuration reload ,Start the new worker processes with a new configuration Gracefully shutdown the old worker processes改变配置文件,平滑的重读配置文件 。
-    USR1:	Reopen the log files 重读日志,在日志按月/日分割时有用 。
-    USR2:	Upgrade Executable on the fly 平滑的升级。
-    WINCH:	Gracefully shutdown the worker processes 优雅关闭旧的进程(配合USR2来进行升级)。
+    TERM, INT：	Quick shutdown /n
+    QUIT:	Graceful shutdown 优雅的关闭进程,即等请求结束后再关闭 。/n
+    HUP :	Configuration reload ,Start the new worker processes with a new configuration Gracefully shutdown the old worker processes改变配     置文件,平滑的重读配置文件 。/n
+    USR1:	Reopen the log files 重读日志,在日志按月/日分割时有用 。/n
+    USR2:	Upgrade Executable on the fly 平滑的升级。/n
+    WINCH:	Gracefully shutdown the worker processes 优雅关闭旧的进程(配合USR2来进行升级)。/n
+  7. nginx 编译安装
+    https://www.cnblogs.com/stulzq/p/9291223.html 参考
