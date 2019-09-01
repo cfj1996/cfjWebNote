@@ -13,6 +13,8 @@
   8. cp file1 file2 复制一个文件
   9. find / -name file1 从 '/' 开始进入根文件系统搜索文件和目录
   10. rz  sz 文件上传下载
+  11. wget -c url 下载文件
+  12. tar -zxvf 解压tar文件
 
 ## 2. 查看进程
   1. ps -aux | grep nginx 进程名查看进程号
