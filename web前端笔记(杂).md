@@ -399,3 +399,6 @@
 * nuxt.config.js配置中间件在router下配置，
 * pages与layouts直接配置。
 
+# 十三.deasync.node operation not permitted
+ 切换源 yarn  global add deasync
+ yrm use taobao
