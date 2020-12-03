@@ -80,3 +80,6 @@
         use:getStyleLoaders({importLoaders: 2, localIdentName: '[name]__[local]--[hash:base64:5]'}),
         sideEffects: true,
     })
+
+### 4. config.resolve.symlinks 配置项将link的包解析到它们的符号链接位置，在自己开发包本地link时需要配置这个参数值为false，不然会造成包无法引入；
+参考链接 https://www.jianshu.com/p/ca252cd667df
