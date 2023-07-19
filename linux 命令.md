@@ -40,6 +40,20 @@
     配置文件路径 /etc/nginx
     默认静态文件路径 /usr/share/nginx/html
     日志文件路径 /var/log/nginx
-    
+  9. 代理配置
+      ```
+        
+        location /api {
+            # proxy_pass 末尾带上/ 会以根目录进行代理 http://localhost:80/api/getUser => https://we.baibaoyun.com/getUser
+            proxy_pass  https://we.baibaoyun.com/;
+
+            proxy_set_header Host $host;
+            proxy_set_header  X-Real-IP        $remote_addr;
+            proxy_set_header  X-Forwarded-For  $proxy_add_x_forwarded_for;
+            proxy_set_header X-NginX-Proxy true;
+
+        }
+
+      ```
   ## 4. node安装
   https://segmentfault.com/a/1190000008462910 参考
