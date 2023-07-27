@@ -40,4 +40,4 @@
         target: element //被观察的目标元素
       }
 
-
+* 使用css样式 可滚动容器添加overscrollBehavior: "none",可能会解决功能拖动问题
